@@ -62,7 +62,7 @@ export class PostComponent implements OnInit {
 
   setScrollTop() {
     if (isPlatformBrowser(this.platformId)) {
-        window.scroll(0, 0);
+        window.scroll(0, 750);
     }
   }
 

@@ -18,15 +18,9 @@
     <mat-list>
       <h3 mat-subheader>Comments</h3>
       <mat-list-item *ngFor="let comment of comments">
-        <div class="media">
-          <div class="media-left">
-            <img class="media-object" src="{{comment.author_avatar_urls[24]}}">
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading" mat-line>{{comment.author_name}}</h4>
-            <p class="media-heading" mat-line [innerHTML]="comment.content.rendered"></p>
-          </div>
-        </div>
+        <img matListAvatar src="{{comment.author_avatar_urls[24]}}">
+        <h3 matLine> {{comment.author_name}} </h3>
+        <p matLine [innerHTML]="comment.content.rendered"></p>
       </mat-list-item>
     </mat-list>
     <div [hidden]="isLoading">
@@ -37,30 +31,4 @@
       </mat-paginator>
     </div>
   </div>
-  <!-- <div class="col-md-6">
-    <button *ngFor="let category of post.categoriesInfo" (click)="goToCategories(category.id)" class="btn btn-primary" type="button">
-      {{category.name}} <span class="badge"></span>
-    </button>
-  </div> -->
-  <!-- <mat-list class="col-md-6">
-    <h3 mat-subheader>Comments</h3>
-    <mat-list-item *ngFor="let comment of comments">
-      <div class="media">
-        <div class="media-left">
-          <img class="media-object" src="{{comment.author_avatar_urls[24]}}">
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading" mat-line>{{comment.author_name}}</h4>
-          <p class="media-heading" mat-line [innerHTML]="comment.content.rendered"></p>
-        </div>
-      </div>
-    </mat-list-item>
-  </mat-list> -->
-  <!-- <div class="col-md-6" [hidden]="isLoading">
-    <mat-paginator
-      [length]="totalPosts"
-      [pageSize]=10
-      (page)="pageEvent($event)">
-    </mat-paginator>
-  </div> -->
 </div>

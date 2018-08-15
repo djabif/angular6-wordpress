@@ -32,18 +32,4 @@ export class HomeService {
     });
   }
 
-  getCommentByPost(itemId){
-    return new Promise((resolve, reject) => {
-      this.http.get(this.url + 'comments?post=' + itemId).subscribe(data => {
-        // Read the result field from the JSON response.
-        resolve(data);
-      });
-    });
-  }
-
-  setScrollTop() {
-    if (isPlatformBrowser(this.platformId)) {
-        window.scroll(0, 0);
-    }
-  }
 }

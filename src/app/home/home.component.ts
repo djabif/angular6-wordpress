@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit {
   }
 
   pageEvent(event){
-    console.log(event)
     this.homeService.getPostsByPage(event.pageIndex + 1)
     .then(res =>{
       let posts: Array<any> = new Array<any>();

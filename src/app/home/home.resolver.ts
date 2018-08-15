@@ -20,12 +20,12 @@ export class HomeResolver implements Resolve<any> {
           item.excerpt.rendered = item.excerpt.rendered.split('<a')[0] + "</p>";
           items.push(item);
         }
-        let postWithPages = {
+        let postInfo = {
           posts: items,
           pages: res.headers.get('X-WP-TotalPages'),
           totalPosts: res.headers.get('X-WP-Total')
         }
-        return resolve(postWithPages)
+        return resolve(postInfo)
       }, err => {
         return reject(err);
       })
